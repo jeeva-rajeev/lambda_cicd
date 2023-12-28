@@ -1,7 +1,10 @@
+const moment = require("moment");
+
 exports.handler = async (event) => {
+  let currentDateTime = moment().format("YYYY-MM-DD");
   const response = {
     statusCode: 200,
-    body: JSON.stringify("Hello World!"),
+    body: JSON.stringify(`The current date is ${currentDateTime}`),
   };
   return response;
 };
