@@ -37,3 +37,6 @@ jobs:
 
       - name: Push Docker Image to ECR
         run: docker push 156833064821.dkr.ecr.ap-south-1.amazonaws.com/lambda_cicd:latest
+      
+      - name: Update lambda Function Image
+        run: aws lambda update-function-code --function-name lambda_cicd --image-uri 156833064821.dkr.ecr.ap-south-1.amazonaws.com/lambda_cicd:latest
